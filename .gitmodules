@@ -1,3 +1,6 @@
 [submodule "music_library_database"]
 	path = music_library_database
 	url = https://github.com/UmbrellaLeaf5/music_library_database
+[submodule "lectures"]
+	path = lectures
+	url = https://github.com/Ivasonik/DBMS24
