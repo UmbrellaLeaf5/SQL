@@ -16,7 +16,7 @@ FROM
 WHERE
   FirstName LIKE 'M%';
 
------------------- 2. Покажите фамилию и имя клиентов у которых имя cодержит символ "ch"?
+------------------ 2. Покажите фамилию и имя клиентов у которых имя содержит символ "ch"?
 SELECT
   FirstName,
   LastName
@@ -39,7 +39,7 @@ SELECT
 FROM
   employees
 WHERE
-  strftime('%Y', HireDate) = '2002'
+  strftime ('%Y', HireDate) = '2002'
   AND City = 'Calgary';
 
 ------------------ 5. Покажите фамилию и имя сотрудников кампании нанятых в возрасте 40 лет и выше ?
@@ -49,7 +49,7 @@ SELECT
 FROM
   employees
 WHERE
-  strftime('%Y', 'now') - strftime('%Y', BirthDate) >= 40;
+  strftime ('%Y', 'now') - strftime ('%Y', BirthDate) >= 40;
 
 ------------------ 6. Покажите покупателей-американцев без факса ?
 SELECT
@@ -67,7 +67,7 @@ SELECT DISTINCT
 FROM
   sales
 WHERE
-  strftime('%m', SalesDate) IN ('08', '09')
+  strftime ('%m', SalesDate) IN ('08', '09')
   AND ShipCountry = 'Canada';
 
 ------------------ 8. Покажите почтовые адреса клиентов из домена gmail.com ?
@@ -85,10 +85,10 @@ SELECT
 FROM
   employees
 WHERE
-  strftime('%Y', 'now') - strftime('%Y', HireDate) >= 18
+  strftime ('%Y', 'now') - strftime ('%Y', HireDate) >= 18
   OR (
-    strftime('%Y', 'now') - strftime('%Y', HireDate) = 18
-    AND strftime('%m', 'now') >= strftime('%m', HireDate)
+    strftime ('%Y', 'now') - strftime ('%Y', HireDate) = 18
+    AND strftime ('%m', 'now') >= strftime ('%m', HireDate)
   );
 
 ------------------ 10. Покажите в алфавитном порядке все должности в кампании ?
@@ -103,7 +103,7 @@ ORDER BY
 SELECT
   LastName,
   FirstName,
-  strftime('%Y', 'now') - Age AS BirthYear
+  strftime ('%Y', 'now') - Age AS BirthYear
 FROM
   customers
 ORDER BY
@@ -148,7 +148,7 @@ SELECT
 FROM
   employees
 WHERE
-  strftime('%m', HireDate) = '10';
+  strftime ('%m', HireDate) = '10';
 
 ------------------ 16. Покажите фамилию самого старого по стажу сотрудника в кампании ?
 SELECT
