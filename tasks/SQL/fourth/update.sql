@@ -1,16 +1,20 @@
 -- LOG
+-- переименование строк
 UPDATE LOG
 SET
   user_id = REPLACE(user_id, 'Запись пользователя № - ', ''),
   time = REPLACE(time, '[', '');
 
+-- удаление грязи
 DELETE FROM LOG
 WHERE
   time IS NULL
   OR user_id IS NULL
+  -- 
   OR user_id IS '#error';
 
-DELETE FROM LOG -- удаление дубликатов
+-- удаление дубликатов
+DELETE FROM LOG
 WHERE
   rowid NOT IN (
     SELECT
@@ -24,20 +28,25 @@ WHERE
 
 -- 
 -- USERS
+-- 
+-- переименование строк
 UPDATE USERS
 SET
   user_id = REPLACE(user_id, 'U', 'u'),
   geo = REPLACE(geo, 'Арзангелтск', 'Архангельск');
 
+-- удаление грязи
 DELETE FROM USERS
 WHERE
   user_id IS 'Юзверь'
   OR mail NOT LIKE '%@%.%'
+  -- 
   OR geo IS NULL
   OR mail IS NULL
   OR user_id IS NULL;
 
-DELETE FROM USERS -- удаление дубликатов
+-- удаление дубликатов
+DELETE FROM USERS
 WHERE
   rowid NOT IN (
     SELECT

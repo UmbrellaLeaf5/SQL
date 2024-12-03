@@ -25,6 +25,9 @@ def main():
     log_file: str
     users_file: str
 
+    # В инструкции написаны файлы со скобками,
+    # а в группе даны без, так что нахожу, какие есть
+
     if IsFileInFolder('log1.csv'):
         log_file = 'log1.csv'
     else:
@@ -35,11 +38,15 @@ def main():
     else:
         users_file = 'users(1).csv'
 
+    # Чтение .csv файлов в pd.DataFrame
+
     log_df = pd.read_csv(
         log_file, names=['user_id', 'time', 'bet', 'win'], encoding='utf-8', sep=',')
 
     users_df = pd.read_csv(
         users_file, names=['user_id', 'mail', 'geo'], encoding='koi8-r', sep='\t')
+
+    # Сохранение pd.DataFrame в базу данных SQL
 
     conn = sqlite3.connect('log_users.s3db')
 
