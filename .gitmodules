@@ -3,4 +3,4 @@
 	url = https://github.com/UmbrellaLeaf5/music_library_database
 [submodule "lectures"]
 	path = lectures
-	url = https://github.com/Ivasonik/DBMS24
+	url = https://github.com/UmbrellaLeaf5/DBMS_MIPT_DAFE_2024_sources
