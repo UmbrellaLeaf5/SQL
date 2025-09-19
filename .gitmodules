@@ -4,3 +4,6 @@
 [submodule "lectures"]
 	path = lectures
 	url = https://github.com/UmbrellaLeaf5/DBMS_MIPT_DAFE_2024_sources
+[submodule "postgresql/template"]
+	path = postgresql/template
+	url = https://github.com/UmbrellaLeaf5/template_postgresql_docker_compose
