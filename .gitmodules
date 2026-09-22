@@ -1,6 +1,6 @@
 [submodule "music_library_database"]
 	path = music_library_database
-	url = https://github.com/UmbrellaLeaf5/music_library_database
+	url = git@github.com:UmbrellaLeaf5/music_library_database.git
 [submodule "postgresql/template"]
 	path = postgresql/template
-	url = https://github.com/UmbrellaLeaf5/template_postgresql_docker_compose
+	url = git@github.com:UmbrellaLeaf5/template_postgresql_docker_compose.git
